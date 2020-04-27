@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+</head>
+<body>
+	<div class="container">
+			
+					<div class="text-white" style="text-align: center; padding-top: 35px; margin-bottom: -50px;">
+							<h2>SIGN UP</h2>
+					</div>
+				
+		<div class="row">
+				
+			<div class="col-md-4 offset-md-4 col-10 offset-1 login-main border rounded pb-4">
+				<form id="register">
+					<div class="row">
+						<div class="col-md-12 col-12 mt-5">
+								<label for="email"><b>Username</b></label>
+								<input type="text" placeholder="Enter Username" id="username" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12 mt-3">
+								<label for="email"><b>Email</b></label>
+								<input type="email" placeholder="Enter Email" id="email" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12 mt-3">
+								<label for="email"><b>Gender</b></label>
+								<input type="text" placeholder="Enter Gender" id="gender" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12 mt-3">
+								<label for="email"><b>Phone Number</b></label>
+								<input type="number" placeholder="Enter Phone number" id="phone" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12 mt-3">
+								<label for="email"><b>Grade</b></label>
+								<input type="text" placeholder="Enter class/grade/form" id="grade" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12 mt-3">
+								<label for="email"><b>Topics</b></label>
+								<input type="text" placeholder="Enter topic(s)" id="topics" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12 mt-3">
+								<label for="email"><b>School</b></label>
+								<input type="text" placeholder="Enter School" id="school" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12 mt-3">
+								<label for="email"><b>Password</b></label>
+								<input type="password" placeholder="Enter password" id="password" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12 mt-3">
+								<label for="email"><b>Password</b></label>
+								<input type="password" placeholder="Re-enter password" id="password2" required>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-12 col-12 mt-4">
+					      	<button type="submit" class="primary-btn2" style="text-align: right;">REGISTER</button>
+						</div>
+					</div>
+					<div class="container signin">
+						<p>Already have an account? <a href="login/login.html">Sign in</a>.</p>
+					</div>
+					<!-- <div class="row">
+						<div class="col-md-12 col-12 mt-3 options">
+					      	<div class="row">
+					      		<div class="col-md-6 col-12 pl-4">
+					      			<div class="custom-control custom-checkbox mr-sm-2">
+								        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+								        <label class="custom-control-label text-white" for="customControlAutosizing">Remember me</label>
+								    </div>
+					      		</div>
+					      		
+					      	</div>
+						</div>
+					</div> -->
+				</form>
+				<div style="text-align: center">
+						 <a href="index.html">Back Home</a>
+					</div>
+			</div>
+			<p class="col-lg-8 col-sm-12 footer-text m-0 copyright-main" >
+           
+			Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed by Agwenchez 
+					
+			</p>
+		</div>
+	</div>
+	<ul class="bubble-boxes">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+<script>
+
+document.getElementById('register').addEventListener('submit', postData);
+
+function postData(e){
+           e.preventDefault();
+
+           let name = document.getElementById('username').value;
+		   let email = document.getElementById('email').value;
+		   let gender = document.getElementById('gender').value;
+		   let phone = document.getElementById('phone').value;
+		   let grade = document.getElementById('grade').value;
+		   let topics = document.getElementById('topics').value;
+		   let school = document.getElementById('school').value;
+           let password = document.getElementById('password').value;
+           let password2 = document.getElementById('password2').value;
+
+           fetch('http://localhost:5000/api/users/register', {
+               method: 'POST',
+               headers:{
+                'Content-Type': 'application/json'
+              },
+              redirect:"follow",
+               body:JSON.stringify(
+                   {
+                    name:name,
+                    email:email,
+                    password: password,
+                    password2:password2
+                }
+                )
+           }).then(res => res.json())
+           .then(data => {
+			console.log(data)
+			window.location.replace = "index.html";
+        }).catch((err)=>console.log(err))
+
+        document.getElementById("register").reset();
+     
+       }
+
+</script>
+</html>
