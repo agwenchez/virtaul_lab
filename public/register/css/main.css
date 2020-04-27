@@ -597,7 +597,7 @@ input {
   left: 50%;
   width: 25px;
   height: 25px;
-  animation-delay: 5s;
+  animation-delay: 3s;
   animation-duration: 15s;
 }
 .bubble-boxes li:nth-child(9){
@@ -612,29 +612,29 @@ input {
   width: 150px;
   height: 150px;
   animation-delay: 0s;
-  animation-duration: 12s;
+  animation-duration: 15s;
 }
 .bubble-boxes li:nth-child(11){
   left: 15%;
   width: 30px;
   height: 30px;
-  animation-delay: 5s;
+  animation-delay: 2s;
   animation-duration: 16s;
 }
-.bubble-boxes li:nth-child(12){
+/* .bubble-boxes li:nth-child(12){
   left: 25%;
   width: 2;
   height: 20px;
   animation-delay: 2s;
-  animation-duration: 8s;
+  animation-duration: 20s;
 }
 .bubble-boxes li:nth-child(13){
   left: 10%;
   width: 150px;
   height: 150px;
   animation-delay: 0s;
-  animation-duration: 5s;
-}
+
+} */
 
 
 @keyframes animate{
