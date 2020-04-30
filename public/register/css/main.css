@@ -166,7 +166,11 @@ h6 {
 }
 
 .bg-gold {
-  background: gold;
+  background: #FDC632;
+  background: -webkit-linear-gradient(-135deg, #FDC632, #c850c0);
+  background: -o-linear-gradient(-135deg, #FDC632, #c850c0);
+  background: -moz-linear-gradient(-135deg, #FDC632, #c850c0);
+  background: linear-gradient(-135deg, #FDC632, #c850c0);
 }
 
 
