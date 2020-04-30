@@ -653,3 +653,11 @@ input {
       border-radius: 50%;
   }
 }
+
+
+/* sign in */
+.signin{
+  text-align: center;
+  color:white;
+  margin-top: 35px;
+}
